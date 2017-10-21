@@ -1,16 +1,22 @@
 package com.sam.didemo.controller;
 
 
+import com.sam.didemo.service.GreetingService;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public  String  hello(){
+    private GreetingService greetingService;
 
-        System.out.println("Hello");
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
 
-        return "foo";
+    public  String  sayHello(){
+
+        return greetingService.sayGreeting();
 
     }
 
