@@ -3,3 +3,11 @@ sam:
     username: JMS Username
     password: password
     url: SomeUrl
+
+--- #file separator(we can also create separate .yml file as 'application-profilename.yml like that application.properties are')
+spring:
+    profiles: de
+
+sam:
+  jms:
+    username: JMS Username $$$$$ GERMAN
